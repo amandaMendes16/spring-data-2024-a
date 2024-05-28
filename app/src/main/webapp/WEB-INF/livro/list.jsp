@@ -5,15 +5,17 @@
     <head>
         <meta charset="UTF-8" />
         <title>Livros</title>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
     </head>
     <body>
+        <div class="container">
         <h1>Livros</h1>
-            <a href="/livros/insert">Novo Gênero</a>
-            <table>
+            <a href="/livros/insert" class="btn btn-primay">Novo Livro</a>
+            <table class="table">
                 <tr>
                     <th>Id</th>
                     <th>Titulo</th>
-                    <th>Gênero</th>
+                    <th>Genero</th>
                     <th>&nbsp;</th>
                 </tr>
                 <c:forEach var="item" items="${livros}">
@@ -22,11 +24,13 @@
                         <td>${item.titulo}</td>
                         <td>${item.genero.nome}</td>
                         <td>
-                            <a href="/livros/update?id=${item.id}">Editar</a>
-                            <a href="/livros/delete?id=${item.id}">Excluir</a>
+                            <a href="/livros/update?id=${item.id}" class="btn btn-secondary">Editar</a>
+                            <a href="/livros/delete?id=${item.id}" class="btn btn-danger">Excluir</a>
                         </td>
                     </tr>
                 </c:forEach>
             </table>
+
+        </div>
     </body>
 </html>
